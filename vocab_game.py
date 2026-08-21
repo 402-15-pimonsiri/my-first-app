@@ -84,6 +84,29 @@ ans3 = st.text_input(
     value=st.session_state.ans3_val,
 )
 ans4 = st.text_input(
-    "ข้อ 4: Soft, sweet, and fuzzy... guess what? I'm a `P _ _ c h `. 🍑",
+    "ข้อ 4: An `O r _ n _ e ` is orange, both inside and out. 🍊",
     value=st.session_state.ans4_val,
 )
+
+# อัปเดตค่าล่าสุดเข้าตัวแปร
+st.session_state.ans1_val = ans1
+st.session_state.ans2_val = ans2
+st.session_state.ans3_val = ans3
+st.session_state.ans4_val = ans4
+
+
+# 4. ปุ่มส่งคำตอบ
+if "start" in st.session_state and not st.session_state.get("is_ended", False):
+    if st.button("📥 ส่งคำตอบ"):
+        st.session_state.is_ended = True
+        st.rerun()
+
+    time.sleep(1)
+    st.rerun()
+
+# 5. แสดง Dialog ผลลัพธ์
+if st.session_state.get("is_ended", False):
+    show_result_dialog(ans1, ans2, ans3, ans4)
+
+st.divider()
+st.write("นางสาวพิมลสิริ อุตะมะแก้ว เลขที่ 15 ม.4/2")
