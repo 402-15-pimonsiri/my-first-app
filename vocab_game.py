@@ -25,7 +25,7 @@ def reset_game():
 # 📌 ฟังก์ชัน MessageBox (Dialog)
 # ----------------------------------------------------
 @st.dialog("📊 สรุปผลการเล่นเกม")
-def show_result_dialog(ans1, ans2):
+def show_result_dialog(ans1, ans2, ans3, ans4):
     st.balloons()
     score = 0
 
@@ -34,22 +34,29 @@ def show_result_dialog(ans1, ans2):
     u_ans3 = ans3.strip().lower()
     u_ans4 = ans4.strip().lower()
 
- if u_ans1 == "apple":
+   # ตรวจข้อ 1
+    if u_ans1 == "apple":
         st.success("✅ ข้อ 1: ถูกต้อง")
         score += 1
-   else:
+    else:
         st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans1}')")
- if u_ans2 == "fish":
+
+    # ตรวจข้อ 2
+    if u_ans2 == "fish":
         st.success("✅ ข้อ 2: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
- if u_ans3 == "Avocado":
+        
+    # ตรวจข้อ 3
+    if u_ans3 == "Avocado":
         st.success("✅ ข้อ 3: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
- if u_ans4 == " Orange":
+        
+    # ตรวจข้อ 4    
+    if u_ans4 == " Orange":
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
@@ -76,7 +83,6 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
 
 st.divider()
 
-
 ans1 = st.text_input(
     "ข้อ 1: An `a _ _ l e` a day keeps the doctor away. 🍎",
     value=st.session_state.ans1_val,
@@ -86,7 +92,7 @@ ans2 = st.text_input(
     value=st.session_state.ans2_val,
 )
 ans3 = st.text_input(
-    "ข้อ 3: `A v _ _a d o`is green inside and out, with a seed too, wink! . 🥑 ",
+    "ข้อ 3: `A v _ _ a d o`is green inside and out, with a seed too, wink! . 🥑 ",
     value=st.session_state.ans3_val,
 )
 ans4 = st.text_input(
