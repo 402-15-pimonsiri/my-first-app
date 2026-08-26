@@ -91,11 +91,11 @@ ans2 = st.text_input(
     value=st.session_state.ans2_val,
 )
 ans3 = st.text_input(
-    "ข้อ 3: Green fruit used to make guacamole 'A _ _ c a d o'. 🥑",
+    "ข้อ 3: Green fruit used to make guacamole `A _ _ c a d o`. 🥑",
     value=st.session_state.ans3_val,
 )
 ans4 = st.text_input(
-    "ข้อ 4:Round citrus fruit named after its color 'O _ a n g e'. 🍊",
+    "ข้อ 4:Round citrus fruit named after its color `O _ a n g e`. 🍊",
     value=st.session_state.ans4_val,
 )
 # อัปเดตค่าล่าสุดเข้าตัวแปร
