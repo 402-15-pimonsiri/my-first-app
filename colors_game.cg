@@ -119,7 +119,7 @@ ans4 = st.text_input(
     value=st.session_state.ans4_val,
 )
 ans5 = st.text_input(
-    "ข้อ 5: "C h _ r _ y R _ d" Warm tone and name of fruit in the berry. 🍒",
+    "ข้อ 5: "C h _ r _ y  R _ d" Warm tone and name of fruit in the berry. 🍒",
     value=st.session_state.ans5_val,
 )
 
