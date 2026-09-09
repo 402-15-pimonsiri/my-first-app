@@ -42,35 +42,35 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5):
     u_ans5 = ans5.strip().lower()
 
     # ตรวจข้อ 1
-    if u_ans1 == "Lavender":
+    if u_ans1 == "lavender":
         st.success("✅ ข้อ 1: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans1}')")
 
     # ตรวจข้อ 2
-    if u_ans2 == "Mint":
+    if u_ans2 == "mint":
         st.success("✅ ข้อ 2: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
   
     # ตรวจข้อ 3
-    if u_ans3 == "Silver":
+    if u_ans3 == "silver":
         st.success("✅ ข้อ 3: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
     # ตรวจข้อ 4
-    if u_ans4 == "Gold":
+    if u_ans4 == "gold":
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
   
     # ตรวจข้อ 5
-    if u_ans5 == "Cherry Red":
+    if u_ans5 == "cherry red":
         st.success("✅ ข้อ 5: ถูกต้อง")
         score += 1
     else:
@@ -78,7 +78,7 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5):
 
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
-  if score == 5:
+    if score == 5:
         st.success("🎉 You win!")
     else:
         st.error("💀 You lose!")
@@ -103,23 +103,23 @@ st.divider()
 
 # 3. ช่องรับคำตอบ (ใช้ value ผูกกับตัวแปรตรงๆ เพื่อสั่งเคลียร์ได้)
 ans1 = st.text_input(
-    "ข้อ 1: "L _ v _ n d _ r"  Field of purple flowers and smell of the perfume. 🪻",
+    "ข้อ 1: 'L _ v _ n d _ r'  Field of purple flowers and smell of the perfume. 🪻",
     value=st.session_state.ans1_val,
 )
 ans2 = st.text_input(
-    "ข้อ 2: "M _ _ t" Cool-toned shade that tastes delicious with chocolate. 🍀",
+    "ข้อ 2: 'M _ _ t' Cool-toned shade that tastes delicious with chocolate. 🍀",
     value=st.session_state.ans2_val,
 )
 ans3 = st.text_input(
-    "ข้อ 3: "S _ l v _ r" The second-place runner-up medal. 🥈",
+    "ข้อ 3: 'S _ l v _ r' The second-place runner-up medal. 🥈",
     value=st.session_state.ans3_val,
 )
 ans4 = st.text_input(
-    "ข้อ 4: "G _ l _" The first-place championship and luxury. 🏆",
+    "ข้อ 4: 'G _ l _' The first-place championship and luxury. 🏆",
     value=st.session_state.ans4_val,
 )
 ans5 = st.text_input(
-    "ข้อ 5: "C h _ r _ y  R _ d" Warm tone and name of fruit in the berry. 🍒",
+    "ข้อ 5: 'C h _ r _ y  R _ d' Warm tone and name of fruit in the berry. 🍒",
     value=st.session_state.ans5_val,
 )
 
@@ -138,8 +138,7 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
         st.rerun()
 
     time.sleep(1)
-  
- st.rerun()
+    st.rerun()
 
 # 5. แสดง Dialog ผลลัพธ์
 if st.session_state.get("is_ended", False):
